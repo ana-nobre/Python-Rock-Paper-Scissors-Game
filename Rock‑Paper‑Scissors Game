@@ -1,0 +1,46 @@
+#Python CLI – Rock‑Paper‑Scissors Game
+
+def play():
+    counter = 0
+    while True:
+        print("Welcome to Rock-Paper-Scissor's Game!")
+        print("Select an option")
+        print("1. Paper")
+        print("2. Rock")
+        print("3. Scissor")
+        print("4. Close Game")
+        
+        try: 
+            option_1 = int(input("Type Player 1 option:"))
+            option_2 = int(input ("Type Player 2 option:"))
+        except:
+            print("Please select only numbers")
+            continue
+
+        if (option_1 == 4) or (option_2 == 4):
+            print("Game Closed")
+            break
+        if (option_1 in [1, 2, 3]) and (option_2 in [1, 2, 3]):
+            if  ((option_1 == 1) and (option_2 == 2)) or ((option_1 == 2) and (option_2 == 1)): 
+                print("paper and rock")
+                print("Paper is the Winner!:")
+            elif ((option_1 == 2) and (option_2 == 3)) or ((option_1 == 3) and (option_2 == 2)) : 
+                print("rock and scissor")
+                print("Rock is the Winner!")
+            elif ((option_1 == 3) and (option_2 == 1)) or ((option_1 == 1) and (option_2 == 3)): 
+                print("scissor and paper")
+                print("Scissor is the Winner!")
+            elif  option_1 == 1 and option_2 == 1: 
+                print("paper and paper")
+                print("No Winner, Try Again")
+            elif  option_1 == 2 and option_2 == 2: 
+                print("rock and rock")
+                print("No Winner, Try Again")
+            elif option_1 == 3 and option_2 == 3: 
+                print("scissor and scissor")
+                print("No Winner, Try Again")
+        else: 
+            print("Invalid Option, Please Try Again.")
+
+
+play()
